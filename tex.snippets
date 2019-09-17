@@ -462,8 +462,32 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int|Psi|psi|Phi|phi|theta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
+endsnippet
+
+priority 100
+context "math()"
+snippet lam "lambda" iA
+\lambda
+endsnippet
+
+priority 100
+context "math()"
+snippet sig "sigma" iA
+\sigma
+endsnippet
+
+priority 100
+context "math()"
+snippet eps "epslion" iA
+\epsilon
+endsnippet
+
+priority 100
+context "math()"
+snippet e0 "epslion0" iA
+\epsilon_0
 endsnippet
 
 priority 100
@@ -646,6 +670,30 @@ priority 100
 context "math()"
 snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 1000
+context "math()"
+snippet "hbar" "hbar" riA
+\hbar
+endsnippet
+
+priority 1000
+context "math()"
+snippet "scr" "scr" riA
+\tilde{r}
+endsnippet
+
+priority 10
+context "math()"
+snippet "vec" "vec" riA
+\vec{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])vec" "vec" riA
+\vec{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 10
