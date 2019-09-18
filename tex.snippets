@@ -265,7 +265,7 @@ snippet lr[ "left[ right]" i
 endsnippet
 
 snippet lra "leftangle rightangle" iA
-\left<${1:${VISUAL}} \right>$0
+\left<${1:${VISUAL}} \right> $0
 endsnippet
 
 context "math()"
@@ -293,8 +293,11 @@ snippet prod "product" w
 \prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
 endsnippet
 
+snippet der "d/dx" w
+\frac{d $1}{d $2} $0
+endsnippet
 snippet part "d/dx" w
-\frac{\partial ${1:V}}{\partial ${2:x}} $0
+\frac{\partial $1}{\partial $2} $0
 endsnippet
 
 context "math()"
@@ -492,25 +495,25 @@ endsnippet
 
 priority 100
 context "math()"
-snippet cot "cos(theta)" iA
+snippet cot "cos(theta)" A
 \cos(\theta)
 endsnippet
 
 priority 100
 context "math()"
-snippet sit "sin(theta)" iA
+snippet sit "sin(theta)" A
 \sin(\theta)
 endsnippet
 
 priority 100
 context "math()"
-snippet cop "cos(phi)" iA
+snippet cop "cos(phi)" A
 \cos(\phi)
 endsnippet
 
 priority 100
 context "math()"
-snippet sip "sin(phi)" iA
+snippet sip "sin(phi)" A
 \sin(\phi)
 endsnippet
 
@@ -662,26 +665,26 @@ endsnippet
 
 priority 10
 context "math()"
-snippet "bar" "bar" riA
+snippet "([^h])bar" "bar" rA
 \overline{$1}$0
 endsnippet
 
 priority 100
 context "math()"
-snippet "([a-zA-Z])bar" "bar" riA
+snippet "([a-gi-zA-Z])bar" "bar" rA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 1000
 context "math()"
-snippet "hbar" "hbar" riA
-\hbar
+snippet "([^\\])hbar" "hbar" riA
+`!p snip.rv=match.group(1)`\hbar
 endsnippet
 
 priority 1000
 context "math()"
 snippet "scr" "scr" riA
-\tilde{r}
+\scriptr
 endsnippet
 
 priority 10
